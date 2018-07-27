@@ -3,7 +3,7 @@ function sketchProc(processing) {
     var y = 100;
  
     processing.setup = function() {
-        processing.size(innerWidth,innerHeight);
+        processing.size(innerWidth*0.9,innerHeight);
         processing.stroke(255);
         processing.frameRate(30);
     }
