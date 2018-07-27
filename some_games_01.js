@@ -2,7 +2,7 @@ function sketchProc(processing) {
  
     var y = 100;
     var count = 0;
-    var move = false;
+    var move = 0;
 
     processing.setup = function() {
         processing.size(innerWidth,innerHeight);
@@ -24,17 +24,11 @@ function sketchProc(processing) {
         processing.background(0);
         processing.noFill();
         processing.strokeWeight(1);
-        if(move){
+        if(move==1){
             processing.strokeWeight(3);
         }
         processing.stroke(255);
         processing.ellipse(processing.mouseX,processing.mouseY,30,30);
-
-        if(processing.mousePressed){
-            move = true;
-        }else if(processing.mouseReleased){
-            move = false;
-        }
 
         if(move){
             count++;
@@ -43,6 +37,15 @@ function sketchProc(processing) {
             processing.text(count,100,100);
         }
 
+    }
+
+    processing.mousePressed = function(){
+        move = 1;
+    }
+
+    processing.mouseReleased = function(){
+        move = 0;
+        count = 0;
     }
  
 }
