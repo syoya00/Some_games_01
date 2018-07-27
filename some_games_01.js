@@ -8,6 +8,8 @@ function sketchProc(processing) {
     }
  
     processing.draw = function() {
+        /*
+        // サイズチェック
         processing.background(0);
         processing.noFill();
         processing.strokeWeight(1);
@@ -15,6 +17,11 @@ function sketchProc(processing) {
         for(var i=0;i<10;i++){
             processing.rect(0+innerWidth*i/20,0+innerHeight*i/20,innerWidth*(10-i)/10,innerHeight*(10-i)/10);
         }
+        */
+
+        processing.background(0);
+        processing.ellipse(mouseX,mouseY,30,30);
+
     }
  
 }
