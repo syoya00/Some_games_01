@@ -3,18 +3,18 @@ function sketchProc(processing) {
     var y = 100;
  
     processing.setup = function() {
-        processing.size(innerWidth*0.5,innerHeight*0.5);
-        processing.stroke(255);
+        processing.size(innerWidth,innerHeight);
         processing.frameRate(30);
     }
  
     processing.draw = function() {
         processing.background(0);
-        y = y - 1;
-        if (y < 0) { 
-            y = innerHeight; 
-        } 
-        processing.line(0, y, innerWidth, y);  
+        processing.noFill();
+        processing.strokeWeight(1);
+        processing.stroke(255);
+        for(var i=0;i<10;i++){
+            processing.rect(0+innerWidth*i/20,0+innerHeight*i/20,innerWidth*(10-i)/10,innerHeight*(10-i)/10);
+        }
     }
  
 }
