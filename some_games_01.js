@@ -20,7 +20,10 @@ function sketchProc(processing) {
         */
 
         processing.background(0);
-        processing.ellipse(mouseX,mouseY,30,30);
+        processing.noFill();
+        processing.strokeWeight(1);
+        processing.stroke(255);
+        processing.ellipse(processing.mouseX,processing.mouseY,30,30);
 
     }
  
